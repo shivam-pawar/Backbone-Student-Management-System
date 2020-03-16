@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <title>Student Managment System</title>
+</head>
+<body>
+    <!-- <form> -->
+    <div class="container">
+     
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Emailid</th>
+                    <th>Contact</th>
+                    <th>Department</th>
+                    <th>Action</th>
+
+                </tr>
+
+                <tr>
+                    
+                    <td><input id="sid-input" class="form-control sid-input" ></td>
+                    <td><input id="sname-input" class="form-control sname-input" ></td>
+                    <td><input id="emailid-input" class="form-control emailid-input" ></td>
+                    <td><input id="contact-input" class="form-control contact-input" ></td>
+                    <td><select style="width: fit-content;" class="form-control dept-input">
+                        <option value="0">Select Department</option>
+                        <option value="1">Computer Science</option>
+                        <option value="2">Electronics</option>
+                        <option value="3">Civil</option>
+                        <option value="4">Mechanical</option>
+                        <option value="5">Electrical</option>
+                    </select></td>
+                    <td><button class="btn btn-primary add-record">Add</button></td>
+                
+                </tr>
+
+            </thead>
+            <tbody class="records-list"></tbody>
+        </table>
+    </div>
+<!-- </form> -->
+
+    <script type="text/template" class="records-list-template">
+        <td><span class="sid"><%= sid %></span></td>
+        <td><span class="sname"><%= sname %></span></td>
+        <td><span class="emailid"><%= emailid %></span></td>
+        <td><span class="contact"><%= contact %></span></td>
+        <td><span class="deptname"><%= deptname %></span></td>
+        <td><button style="width:100px;" class="btn btn-warning edit-record" id="firstbtn">Edit</button> <button style="width:100px;" class="btn btn-danger delete-record">Delete</button><button class="btn btn-success update-record" style="display:none; width: 100px;">Update</button> <button class="btn btn-danger cancel" style="display:none; width: 100px;">Cancel</button></td>
+    </script>
+
+    <script src="./vendor/lib/jquery/dist/jquery.min.js"></script>
+    <script src="./vendor/jquery/dist/jquery.js"></script>
+    <script src="./vendor/underscore/underscore.js"></script>
+    <script src="./vendor/backbone/backbone.js"></script>
+    <script src="./js/App.js" asp-append-version="true"></script>
+</body>
+</html>
